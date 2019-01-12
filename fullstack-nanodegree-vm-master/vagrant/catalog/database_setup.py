@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Module to set up database.
+# Set up database
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
