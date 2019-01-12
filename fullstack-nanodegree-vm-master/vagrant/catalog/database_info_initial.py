@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# Initial information in database
 from database_setup import User, Base, Item, Category
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
