@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{% block title %}Delete Item{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-md-12">
+        <div class="row" style="margin-top: 34px;">
+            <h4>Delete Item</h4>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <h5>Are you sure you want to delete : {{item.name}}?</h5>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <form method="POST">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a href="{{ url_for('show_item', item_id=item.id) }}"><button type="button" class="btn btn-success">Cancel</button></a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+{% block title %}View Items{% endblock %}
+{% block content %}
+<div class="container sections">
+    <h4>{{ category.name }} : {{ total }}{% if total == 1 or total == 0 %} item{% else %} items{% endif %}</h4><br>
+    {% if session['user_id'] == category.user_id %}
+        <div class="row">
+          <div class="col-md-12">
+            <a href="{{ url_for('edit_category', category_id=category.id) }}"><button class="btn btn-primary">Edit Category</button></a>
+            <a href="{{ url_for('add_item_by_category', category_id=category.id) }}"><button class="btn btn-info">Add item </button></a>
+            <a href="{{ url_for('delete_category', category_id=category.id) }}"><button class="btn btn-danger">Delete</button></a>
+          </div>
+        </div>
+    {% endif %}   
+    <br>   
+    <div class="col-md-10" style="margin-top: 10px">
+      {% if total == 0 %}
+      <p><font color="red">* No have item in this category.</font></p>
+      {% else %}
+      <table class="table table-hover">
+        <tbody>
+        {% for item in items %}
+          <tr>
+            <td><a href="{{ url_for('show_item', item_id=item.id) }}"><p>{{ item.name }}</p></a></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+    </div>
+</div>
+{% endblock %}

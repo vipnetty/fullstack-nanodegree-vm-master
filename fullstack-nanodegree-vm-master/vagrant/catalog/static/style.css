@@ -1,0 +1,21 @@
+.navbar {
+    -webkit-box-shadow: 0 0 150px 0 rgb(245, 115, 115);
+    -moz-box-shadow: 0 0 150px 0 rgb(245, 115, 115);
+    box-shadow: 0 0 150px 0 rgb(245, 115, 115)9;
+}
+body {
+    background: rgb(240, 172, 204);
+}
+.sections {
+    margin-top: 6%;
+}
+.login-box {
+    margin-top: 200px;
+    height: 250px;
+    box-shadow: None;
+    transition: box-shadow 400ms;
+}
+.container .google-box {
+    display: inline-block;
+    text-align: center;
+}
